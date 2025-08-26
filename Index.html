@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXAMEN DEL CURSO PARAMÉDICO</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+
+    <div id="pagina-inicio" class="pagina">
+        <h1 class="titulo-principal">EXAMEN DEL CURSO PARAMÉDICO</h1>
+        <div class="autor-info">
+            <p class="nombre-autor">Mg. Ricardo Machado Portugal</p>
+            <p class="doctor-info">Doctor en formación en Psicología</p>
+        </div>
+        
+        <form id="formulario-inicio" class="formulario-centrado">
+            <label for="nombre-estudiante">Nombres y Apellidos:</label>
+            <input type="text" id="nombre-estudiante" required placeholder="Escribe aquí tu nombre completo">
+        </form>
+
+        <div class="botones-inicio">
+            <button onclick="iniciarEvaluacion()">Iniciar evaluación</button>
+            <button onclick="imprimirResultados()" disabled id="btn-imprimir-resultados">Imprimir resultados</button>
+            <button onclick="guardarTodoPDF()" disabled id="btn-guardar-pdf">Guardar todo (PDF)</button>
+        </div>
+    </div>
+
+    <div id="pagina-evaluacion" class="pagina oculta">
+        <h2 id="titulo-evaluacion">Evaluación</h2>
+        <div class="header-evaluacion">
+            <span id="reloj-digital">00:00:00</span>
+        </div>
+        <div id="preguntas-container">
+            </div>
+        <div class="navegacion-preguntas">
+            <button onclick="anteriorPagina()" disabled id="btn-anterior">Anterior</button>
+            <button onclick="siguientePagina()" id="btn-siguiente">Siguiente</button>
+            <button onclick="finalizarEvaluacion()" id="btn-finalizar" class="oculta">Finalizar Evaluación</button>
+        </div>
+        <button onclick="cerrarEvaluacion()" class="btn-cerrar">Cerrar</button>
+    </div>
+
+    <div id="pagina-resultados" class="pagina oculta">
+        <h2>Resultados de la Evaluación</h2>
+        <div id="resultado-cuadro" class="cuadro-resultados">
+            </div>
+        <p>¡Felicidades, <span id="nombre-resultado"></span>!</p>
+        <div class="botones-resultados">
+            <button onclick="imprimirResultados()">Imprimir resultados</button>
+            <button onclick="guardarTodoPDF()">Guardar todo (PDF)</button>
+            <button onclick="cerrarEvaluacion()">Cerrar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

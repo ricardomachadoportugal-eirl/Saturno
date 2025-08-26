@@ -1,0 +1,193 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f9;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+.pagina {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    width: 100%;
+}
+
+.oculta {
+    display: none;
+}
+
+/* TÍTULOS Y AUTORÍA */
+.titulo-principal {
+    text-align: center;
+    color: #004d99; /* Azul Paramédico */
+    margin-bottom: 5px;
+}
+
+.autor-info {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.nombre-autor {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 0;
+}
+
+.doctor-info {
+    font-size: 0.7em; /* Letra mucho más pequeña */
+    color: #666;
+    margin: 0;
+}
+
+/* FORMULARIO Y BOTONES */
+.formulario-centrado {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.formulario-centrado label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.formulario-centrado input[type="text"] {
+    padding: 10px;
+    width: 80%;
+    max-width: 400px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+button {
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+button:hover:not(:disabled) {
+    background-color: #0056b3;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.botones-inicio {
+    text-align: center;
+}
+
+.btn-cerrar {
+    background-color: #dc3545;
+    margin-top: 20px;
+}
+.btn-cerrar:hover {
+    background-color: #c82333;
+}
+
+/* EVALUACIÓN */
+#titulo-evaluacion {
+    border-bottom: 2px solid #004d99;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.pregunta-item {
+    margin-bottom: 25px;
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.pregunta-item p {
+    font-weight: bold;
+    color: #333;
+    margin-top: 0;
+}
+
+.respuesta-opcion label {
+    display: block;
+    margin-bottom: 8px;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.respuesta-opcion label:hover {
+    background-color: #e6e6e6;
+}
+
+.respuesta-opcion input[type="radio"] {
+    margin-right: 10px;
+}
+
+.navegacion-preguntas {
+    margin-top: 30px;
+    text-align: center;
+}
+
+/* RESULTADOS */
+.cuadro-resultados {
+    border: 3px solid #004d99;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.cuadro-resultados p {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.correctas { color: #28a745; font-weight: bold; }
+.incorrectas { color: #dc3545; font-weight: bold; }
+
+.botones-resultados {
+    text-align: center;
+}
+
+/* ESTILOS PARA IMPRESIÓN */
+@media print {
+    body {
+        justify-content: flex-start;
+        align-items: flex-start;
+        background-color: white;
+        color: black;
+    }
+    .pagina {
+        box-shadow: none;
+        max-width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    .oculta {
+        display: block !important;
+    }
+    .botones-inicio, .navegacion-preguntas, .btn-cerrar, .botones-resultados, #formulario-inicio {
+        display: none !important;
+    }
+    
+    /* Mostrar solo el contenido relevante para la impresión */
+    #pagina-inicio, #pagina-evaluacion, #pagina-resultados {
+        display: block !important;
+        position: relative;
+    }
+}
